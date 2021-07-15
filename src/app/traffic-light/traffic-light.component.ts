@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { AppState } from '../ngrx/appState.model';
+import { AppState } from '../store';
 
 @Component({
   selector: 'traffic-light',

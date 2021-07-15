@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { AppState } from './ngrx/appState.model';
-import { next } from './ngrx/trafficLight.actions';
+import { AppState, next } from './store';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +8,7 @@ import { next } from './ngrx/trafficLight.actions';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  color$: Observable<string>;
-
-  constructor(private store: Store<AppState>) {
-    this.color$ = store.select((state) => state.color);
-  }
+  constructor(private store: Store<AppState>) {}
 
   next() {
     this.store.dispatch(next());
